@@ -1,0 +1,60 @@
+# Mechanized Agriculture Time Series Forecasting
+
+This notebook provides a comprehensive pipeline for time series forecasting on mechanized agriculture data, including tractor usage, breakdowns, and sales. It demonstrates both classical machine learning and deep learning approaches for predicting failures, sales, and usage patterns.
+
+## Contents
+
+- **Data Preprocessing**
+  - Loading and cleaning data from `dataset (1).xlsx`
+  - Parsing and sorting dates
+  - Handling missing and invalid values
+
+- **Feature Engineering**
+  - Creation of time-based features (day, week, month)
+  - Lag features and rolling window statistics
+  - Outlier detection and handling
+
+- **Modeling Approaches**
+  - **Machine Learning**
+    - Gradient Boosting Regressor
+    - Random Forest Regressor
+    - LightGBM Regressor
+    - Hyperparameter tuning with GridSearchCV
+  - **Deep Learning**
+    - Feedforward Neural Networks (MLP)
+    - LSTM models for single and multi-target forecasting
+
+- **Evaluation**
+  - Metrics: MAE (Mean Absolute Error), RMSE (Root Mean Squared Error)
+  - Visualizations: Actual vs. Predicted plots
+
+- **Interpretation & Insights**
+  - Feature importance analysis
+  - Residual analysis and suggestions for improvement
+  - Comparison of ML and DL performance per target
+
+## Key Findings
+
+- **ML models (Random Forest, LightGBM)** performed best for high-scale targets like engine hours.
+- **DL models (LSTM)** captured temporal patterns well for sales and breakdowns.
+- Feature engineering (lags, rolling means, time-based features) significantly improved model performance.
+- Outlier handling and target transformation (log, clipping) were crucial for stable results.
+
+## How to Use
+
+1. Place `dataset (1).xlsx` in the same directory as the notebook.
+2. Open and run the notebook cell by cell in Jupyter or VS Code.
+3. Review the outputs, plots, and model evaluations for each target variable.
+
+## Requirements
+
+- Python 3.7+
+- pandas, numpy, matplotlib, seaborn
+- scikit-learn, lightgbm, xgboost
+- tensorflow, keras
+- openpyxl
+
+Install requirements with:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn lightgbm xgboost tensorflow openpyxl
